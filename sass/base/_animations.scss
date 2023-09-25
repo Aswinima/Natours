@@ -1,0 +1,37 @@
+//All the animations will be here
+
+@keyframes moveinleft {
+    0%{
+        opacity:0;
+        transform: translateX(-10rem);/*here -x means from the left (opp to x-axis)*/
+    }
+    80%{
+        transform: translate(1rem);/*+x means from left to right,2.in middle if we want to change something*/
+    }
+    100%{
+          opacity:1;
+          transform: translate(0);
+    }
+}
+@keyframes moveinright {
+    0%{
+        opacity:0;
+        transform: translateX(10rem);
+    }
+    80%{
+        transform: translate(-1rem);}
+    100%{
+          opacity:1;
+          transform: translate(0);
+    }
+}
+@keyframes moveinbuttom { /*This is specially for the button animation when loaded*/
+    0%{
+        opacity:0;
+        transform: translateY(3rem);
+    }
+    100%{
+          opacity:1;
+          transform: translate(0);
+    }
+}

@@ -1,0 +1,25 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";//here no need to write _ and .scss
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+@import "components/feature-box";
+
+@import "layouts/header";
+@import "layouts/grid";
+
+@import "pages/home";
+
+//here in main.css the copied css is then changing scss(both sass and scss are same)
+//for each time change it and go and see the the commpiled css in stylemain.css.
+//here all the styles are moves into the related files to make it concise and clear for the larger applications
+//these are actually 7 folders but the other 2 folders right now no need.
+
+
+

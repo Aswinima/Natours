@@ -1,0 +1,19 @@
+//components is to write reuable code and layouts makes all the components together.
+
+$color-primary:#55c57a;//these are var only we can able to write it in scss and use them
+$color-primary-darker: #28b485;
+$color-primary-lighter: #7ed56f;
+
+$color-grey-light-1:#f7f7f7;
+
+$color-grey-dark:#777;
+$color-white:#fff;
+$color-black:#000;//use if only it was using multiple timrs.
+
+//font
+$default-font-size:1.6rem;//cause we all using a lot of times in this poject
+
+// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/icon-font.css"><!--this line and the above line i didnt understand-->
+        <link rel="stylesheet" href="css/stylemain.css">
+        <link rel="stylesheet" href="css/icon-font.css"><!--this was impoted file from linea website to use the fonts-->
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Natours | Exciting tours for adventurous people</title>
+    </head>
+    <body>
+        <!--we are writing all the class names based on BEM model like block inside block-element inside block-element-module for better use and understanding of html-->
+        <header class="header">
+            <div class="header__logo-box"><!--if its just an element declaration then we use 2 underscore after the block-->
+                <img src="img/logo-white.png" alt="img not found" class="header__logo"/>
+            </div>
+            <div class="header__text-box"> <!--it make as a container cause all this should be at center-->
+                <h1 class="heading-primary"><!--the heading primary is itself a block-->
+                <span class="heading-primary--main">outdoors</span><!--it was actually a sub part of the block that is a modfier so -- is used-->
+                <span class="heading-primary--sub">is where life happens</span>
+                </h1>
+                <a href="#" class="btn btn--white btn--animation">Discover our toors</a><!--basically there are here 3 classes with same so in future if we use the first class then style applies to that used tag too here btn-animated is specially created for the animation purpose to just apply to that button only -->
+            </div>
+            
+        </header>
+      
+        <main>
+            <section class="section-about">
+                <div class="u-center-text u-margin-bottum-big">
+                    <h2 class="heading-secondary">
+                        Exciting tours for adventurous people
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-1-of-2">
+                      <h3 class="heading-tertiary u-margin-bottum-small">You are going to fall in love with nature</h3>
+                       <p class="paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vel officia blanditiis aut corrupti, optio, architecto labore amet, autem nam libero delectus dignissimos unde nisi illo ad facere id. Aliquid!
+                       </p>
+                       <h3 class="heading-tertiary u-margin-bottum-small">Live adventours like you never have before</h3>
+                       <p class="paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vel officia blanditiis aut corrupti, optio, architecto labore amet, autem nam libero delectus dignissimos unde nisi illo ad facere id. Aliquid!
+                       </p>
+
+                         <a href="#" class="btn-text">Learn more &rarr;</a><!--&rarr; is one of the htmls formstting this one gives arrow format-->
+
+                    </div>
+                    <div class="col-1-of-2">
+                        <!--.composition>(img.composition__photo.composition__photo--p1)*3 we can just write like this using emmit extension,this is like BEM model(block,element(denoted by _) and modifier inside inside(denoted by--))-->
+                        <div class="composition">
+                            <img src="img/nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1">
+                            <img src="img/nat-2-large.jpg" alt="photo 2" class="composition__photo composition__photo--p2">
+                            <img src="img/nat-3-large.jpg" alt="photo 3" class="composition__photo composition__photo--p3">
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            
+            <section class="section-features">
+                
+                <div class="row">
+                    <div class="col-1-of-4">
+                        <div class="feature-box">
+                            <i class="feature-box__icon icon-basic-world"></i><!--this icon is taken from the downloaded icon folder go to icon-font html file and see the icon and copy the code here-->
+                            <h3 class="heading-tertiary">Explore the world</h3>
+                            <p class="feature-box__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vel officia blanditiis aut corrupti, optio,architecto</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+    </body>
+</html>
+
+
+
+
+
+<!--<section class="grid-test">
+    <div class="row">
+        <div class="col-1-of-2">
+            Col 1 of 2
+        </div>
+        <div class="col-1-of-2">
+            Col 1 of 2
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1-of-3">
+            Col 1 of 3
+        </div>
+        <div class="col-1-of-3">
+            Col 1 of 3
+        </div>
+        <div class="col-1-of-3">
+            Col 1 of 3
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1-of-3">
+            Col 1 of 3
+        </div>
+        <div class="col-2-of-3">
+            Col 2 of 3
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1-of-4">
+            Col 1 of 4
+        </div>
+        <div class="col-1-of-4">
+            Col 1 of 4
+        </div>
+        <div class="col-1-of-4">
+            Col 1 of 4
+        </div>
+        <div class="col-1-of-4">
+            Col 1 of 4
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1-of-4">
+            Col 1 of 4
+        </div>
+        <div class="col-1-of-4">
+            Col 1 of 4
+        </div>
+        <div class="col-2-of-4">
+            Col 2 of 4
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1-of-4">
+            Col 1 of 4
+        </div>
+        <div class="col-3-of-4">
+            Col 3 of 4
+        </div>
+    </div>
+</section>-->

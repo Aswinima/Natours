@@ -1,0 +1,293 @@
+@keyframes moveinleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+    /*here -x means from the left (opp to x-axis)*/ }
+  80% {
+    transform: translate(1rem);
+    /*+x means from left to right,2.in middle if we want to change something*/ }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveinright {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translate(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveinbuttom {
+  /*This is specially for the button animation when loaded*/
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit; }
+
+html {
+  /*usually it was 16px and this tag was used to change all the measurements from px to rem to make it easier,if we using modern css it was very good practice to use rem so that if zoom in or zoom out or we can make the chamges for the complete page*/
+  font-size: 62.5%;
+  /*using px is not a good practice always use % cause if the user browser settings sthey chamges to 20px for their eyesight so to make them easier % used.hence if 100% means 16px by default for 10px it was 62.5px even if user wants to change lets say .625*16=10px if they increse the size like .625*20=12.5px*/
+  /*this difines the actuall 1rem will be*/ }
+
+body {
+  box-sizing: border-box;
+  /*it was a good practice to put here instead of universal selectors*/ }
+
+body {
+  font-family: sans-serif;
+  /*not in universal tag because the child tags will inherit from the parent body tag*/
+  font-weight: 400;
+  /*tells us how thicker or thinner the letters should be*/
+  /*font-size:16px;*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /*back of the face like shakiness is removed when animation is hapenning*/
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveinleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*fast towards the start and slow at the end*/
+    /*animation-delay: 3s;
+          animation-iteration-count:3;*/ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /*we can adjust this by going to the website inspect and change whatever we want*/
+    animation: moveinright 1s ease-out; }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottum-small {
+  margin-bottom: 1.5rem; }
+
+u-margin-botttum-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottum-big {
+  margin-bottom: 8rem; }
+
+btn:link, btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  /*if we mention one means then it applies to all the 4 corners if we mention two then for one top and bottom and for the other left and right applies if we mention 3 then its clockwise dir from top */
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  /*this transition tells us the time taken to apply the effect like animation delay*/
+  position: relative;
+  font-size: 1.6rem; }
+
+btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /*x-axis is 0 as we dont want any changes,y-axis,the blur amount*/ }
+  btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+btn--white {
+  background-color: #fff;
+  color: #777; }
+  btn--white::after {
+    /*to make it wide we use this*/
+    /*here &=btn--white::after*/
+    background-color: #fff; }
+
+btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  /*this means we want the curve all the way to the round*/
+  position: absolute;
+  /*this absolute position needs to be a ref we dont want to be the header so we should put relative to the btn */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+  /*it tells how long the effect gonna takes place*/ }
+
+btn--animation {
+  animation: moveinbuttom .5s ease-out .75s;
+  /*.5s is animation duration and .75 is animation delay*/
+  animation-fill-mode: backwards; }
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all .2s; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20;
+      outline: 1.5rem solid #55c57a; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.4); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+
+.header {
+  height: 95vh;
+  /*its like how much screen its visible remaining 5% it will be visible*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /*the double dot is to go to next folder com next folder called stater then selecting img foder ,2.this linear gradient moves the color from left to right like a light transition,3.the 4th one in rgbs is opacity */
+  background-size: cover;
+  /*cover does that whatever size is the viewport it tries to fit in*/
+  background-position: top;
+  /*when we zoom in or zooom out the top remains same remaining part moves*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*this is in clockwise direction from left based on x and y axis,2.there is a website called clippy which has this polygon numbers*/
+  position: relative;
+  /*as absolute is added to its child logo box*/ }
+  .header__logo-box {
+    /*this & copies the header word*/
+    position: absolute;
+    top: 4rem;
+    /*distance from the top to where the img should locate*/
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem;
+    /*if we mention height then automatically the width should be adjusted*/ }
+  .header__text-box {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    /*it should come a little top*/
+    transform: translate(-50%, -50%);
+    /*-x means from the right to left and -y means bottom to top*/
+    text-align: center;
+    /*to make the button align to the center*/ }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover; }

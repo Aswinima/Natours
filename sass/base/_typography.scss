@@ -1,0 +1,50 @@
+//it was related to typography that means text
+
+body{
+    font-family: sans-serif;/*not in universal tag because the child tags will inherit from the parent body tag*/
+    font-weight: 400;/*tells us how thicker or thinner the letters should be*/
+    /*font-size:16px;*/
+    line-height: 1.7;
+    color:$color-grey-dark;
+    padding:3rem;
+}
+
+.heading-primary{ 
+    color:$color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;/*back of the face like shakiness is removed when animation is hapenning*/
+    margin-bottom: 6rem;
+
+    &--main{
+        display:block;
+        font-size:6rem;
+        font-weight: 400;
+        letter-spacing:3.5rem;
+        animation-name: moveinleft;
+        animation-duration: 1s;
+        animation-timing-function:ease-out;/*fast towards the start and slow at the end*/
+        /*animation-delay: 3s;
+          animation-iteration-count:3;*/
+    }
+    &--sub{
+        display:block;
+        font-size: 2rem;
+        font-weight:700;
+        letter-spacing: 1.75rem;/*we can adjust this by going to the website inspect and change whatever we want*/
+        animation: moveinright 1s ease-out;
+    }
+}
+
+.heading-tertiary{
+    font-size:$default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.paragraph{
+    font-size: $default-font-size;
+    
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+
+}

@@ -1,0 +1,13 @@
+
+.section-about{
+
+background-color: $color-grey-light-1;
+padding:25rem 0;//here first one is top and bottom and the second one is left and right
+margin-top: -20vh;//instead of moving down it moves up,20 is 95vh in above minus 25
+}
+
+.section-features{
+    padding:20rem 0;
+    background-image: linear-gradient(to right bottom,rgba($color-primary-lighter, 0.8) ,rgba($color-primary-darker, 0.8)) ,url(../img/nat-4.jpg);
+    background-size: cover;
+}

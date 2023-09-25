@@ -1,0 +1,77 @@
+//this components folder is like a block we can put any block here by just naming the file with the block name for easy understanding.
+
+btn{
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding:1.5rem 4rem ;/*if we mention one means then it applies to all the 4 corners if we mention two then for one top and bottom and for the other left and right applies if we mention 3 then its clockwise dir from top */
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;/*this transition tells us the time taken to apply the effect like animation delay*/
+        position: relative;
+        font-size: $default-font-size;
+    }
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black,0.2);/*x-axis is 0 as we dont want any changes,y-axis,the blur amount*/
+        &::after{
+            transform:scaleX(1.4) scaleY(1.6);
+            opacity:0;
+        }  
+    }
+    &:active{
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
+    }
+    &--white{
+        background-color: $color-white;
+        color:$color-grey-dark;
+
+        &::after{ /*to make it wide we use this*//*here &=btn--white::after*/
+            background-color:$color-white;
+        }
+    }
+    &::after{
+        content:"";
+        display:inline-block;
+        height:100%;
+        width:100%;
+        border-radius:10rem;/*this means we want the curve all the way to the round*/
+        position:absolute;/*this absolute position needs to be a ref we dont want to be the header so we should put relative to the btn */
+        top:0;
+        left:0;
+        z-index:-1;
+        transition:all .4s;/*it tells how long the effect gonna takes place*/
+    }
+   
+    &--animation {
+        animation: moveinbuttom .5s ease-out .75s;/*.5s is animation duration and .75 is animation delay*/
+        animation-fill-mode: backwards;
+    }
+
+} 
+
+.btn-text{
+    &:link,
+    &:visited{
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;//distance bw text and line
+        transition: all .2s;
+
+    }
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow:0 1rem 2rem rgba($color-black,.15 );//x-direc no shadow 
+        transform: translateY(-2px);
+    }
+    &:active{
+        box-shadow:0 .5rem 1rem rgba($color-black,.15 );
+        transform: translateY(0);//to intial position
+    }
+}

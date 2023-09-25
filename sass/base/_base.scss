@@ -1,0 +1,17 @@
+//_base means its a partial or imported file
+//in this the basix definitions of our file is present
+
+*,
+*::before, /*to even include the properties before and after the styles*/
+*::after{
+    margin:0px;
+    padding:0px;
+    box-sizing: inherit;
+}
+html{        /*usually it was 16px and this tag was used to change all the measurements from px to rem to make it easier,if we using modern css it was very good practice to use rem so that if zoom in or zoom out or we can make the chamges for the complete page*/
+    font-size: 62.5%;/*using px is not a good practice always use % cause if the user browser settings sthey chamges to 20px for their eyesight so to make them easier % used.hence if 100% means 16px by default for 10px it was 62.5px even if user wants to change lets say .625*16=10px if they increse the size like .625*20=12.5px*/
+    /*this difines the actuall 1rem will be*/
+}
+body{
+    box-sizing: border-box;/*it was a good practice to put here instead of universal selectors*/
+}
